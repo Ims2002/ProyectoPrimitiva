@@ -1,10 +1,12 @@
 package proyectoPrimitiva;
 
 import java.util.Random;
+import java.util.Scanner;
 
-import static org.example.Ejercicios8.ejercicio06.Ejercicio06.lector;
 
 public class Menu {
+    
+    static Scanner lector = new Scanner(System.in);
 
     public static int random(int min, int max) {//para los 2 bombos
         Random r = new Random();
@@ -34,6 +36,7 @@ public class Menu {
                             +"\n"+
                             "/ Recordar al usuario que el Reitegro sera Aleatorio"
             );
+
             opcion = Integer.parseInt(lector.nextLine());
             validacion = opcion >= 1 && opcion <= 2;
         }while (!validacion);
