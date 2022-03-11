@@ -59,6 +59,18 @@ public class Menu {
             opcion = Integer.parseInt(lector.nextLine());
             validacion = opcion >= 1 && opcion <= 5;
         }while (!validacion);
+        switch (opcion){
+            case 1:
+                new Modalidad().juegoUnico();
+            case 2:
+                new Modalidad().juegoHastaPremio();
+            case 3:
+                new Modalidad().juegoHastaPremioNoReintregro();
+            case 4:
+                new Modalidad().juegoDiezMilSorteos();
+            case 5:
+                new Modalidad().juegoHastaPremioEspecial();
+        }
 
         return opcion;
 
