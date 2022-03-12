@@ -13,7 +13,6 @@ public class principal {
         System.out.println(ext.reintegro());
         //Creamos el complementario
         System.out.println(ext.complemetario());*/
-        Menu.menu();
-        Menu.menuInical();
+        new Juego();
     }
 }

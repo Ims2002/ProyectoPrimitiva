@@ -7,23 +7,24 @@ import proyectoPrimitiva.config.Config;
 import java.util.Scanner;
 
 public class Extracciones {
-    Scanner lector = new Scanner(System.in);
-    int[] array = new int[Config.NUMERO_EXTRACCIONES];
 
     //Creamos el numero del reintegro
-    public int reintegro() {
+    public static int reintegro() {
         return Metodos.randomInt(9,1);
     }
 
     //Creamos la combinacion con un array de int
-    public int[] combinacionAleatorio() {
+    public static int[] combinacionAleatorio() {
+        int[] array = new int[Config.NUMERO_EXTRACCIONES];
         Bombo bombo = new Bombo(49,1);
         for(int i = 0;i<array.length;i++) {
             array[i] = bombo.extraerBola(); //rellenamos el array con bolas del bombo
         }
         return array;
     }
-    public int[] combinacionImput() {
+    public static int[] combinacionImput() {
+        Scanner lector = new Scanner(System.in);
+        int[] array = new int[Config.NUMERO_EXTRACCIONES];
         Bombo bombo = new Bombo(49,1);
         boolean correcto = false;
         for(int i = 0;i<array.length;i++) {
@@ -42,7 +43,8 @@ public class Extracciones {
         return array;
     }
 
-    public int complemetarioAleatorio() {
+    public static int complemetarioAleatorio() {
+        int[] array = new int[Config.NUMERO_EXTRACCIONES];
         Bombo bombo = new Bombo(43,1); //no pueden salir los numeros que ya han salido
         int comp = bombo.extraerBola();
         for(int i = 0;i<array.length;i++){
@@ -53,18 +55,18 @@ public class Extracciones {
         return comp;
     }
 
-    public int complemetarioImput() {
+    public static int complemetarioImput() {
+        Scanner lector = new Scanner(System.in);
+        int[] array = new int[Config.NUMERO_EXTRACCIONES];
         int comp = 0;
         boolean correcto = false;
-        for(int i = 0;i<array.length;i++){
             do {
-                System.out.println("Dime el numero " + i);
+                System.out.println("Dime el numero complementario");
                 comp = Integer.parseInt(lector.nextLine()); //rellenamos el array con imput
-                if(array[i] <= 49 && array[i] >= 1){
+                if(comp <= 49 && comp >= 1){
                     return comp;
                 }
             }while (correcto == true);
-        }
         return comp;
     }
 }

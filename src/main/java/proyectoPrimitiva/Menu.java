@@ -24,29 +24,15 @@ public class Menu {
     }
 
     public static void menuInical() {
-        int opcion;
-        boolean validacion = false;
-
-        do {
             System.out.println(
                     "6 numeros con los que desea jugar"+"\n"+
                     "1. Teclado Manual"+"\n"+
-                    "2. Combinacíon Aleatorio"+"\n"
-                    +"\n"
-                    +"\n"+
-                    "/ Recordar al usuario que el Reitegro sera Aleatorio"
+                    "2. Combinacíon Aleatorio"+"\n" +
+                    "0. Salir"+"\n"
             );
-
-            opcion = Integer.parseInt(lector.nextLine());
-            validacion = opcion >= 1 && opcion <= 2;
-        }while (!validacion);
-
     }
 
-    public  static int menuModalidad() {
-        int opcion;
-        boolean validacion = false;
-        do {
+    public static void menuModalidad() {
             System.out.println(
                     "MODALIDAD DE JUEGO" +"\n"
                     +"\n"+
@@ -56,23 +42,18 @@ public class Menu {
                     "4. Ciclo de 10000 sorteos"+"\n"+
                     "5. Jugar hasta obtener premio categoría especial"
             );
-            opcion = Integer.parseInt(lector.nextLine());
-            validacion = opcion >= 1 && opcion <= 5;
-        }while (!validacion);
-        switch (opcion){
-            case 1:
-                new Modalidad().juegoUnico();
-            case 2:
-                new Modalidad().juegoHastaPremio();
-            case 3:
-                new Modalidad().juegoHastaPremioNoReintregro();
-            case 4:
-                new Modalidad().juegoDiezMilSorteos();
-            case 5:
-                new Modalidad().juegoHastaPremioEspecial();
-        }
 
-        return opcion;
+    }
+
+    public static void mirarResultado( int[] premios){
+        System.out.println("Estos son los resultados");
+        System.out.println("Especial: " + premios[6]);
+        System.out.println("Premio 1: " + premios[1]);
+        System.out.println("Premio 2: " + premios[2]);
+        System.out.println("Premio 3: " + premios[3]);
+        System.out.println("Premio 4: " + premios[4]);
+        System.out.println("Premio 5: " + premios[5]);
+        System.out.println("Sin Premio: " + premios[0]);
 
     }
 

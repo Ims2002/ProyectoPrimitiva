@@ -1,6 +1,7 @@
 package proyectoPrimitiva.util;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Metodos {
     public static int [] randomizadorArraysInt(int a1[],int max,int min ){
@@ -53,10 +54,12 @@ public class Metodos {
             System.out.println(vector[i]);
         }
     }
-    public static void clearScreen(){
-        System.out.print("Everything on the console will cleared");
-        System.out.print("\u001B[H\u001B[2J");
-        System.out.flush();
+
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static void pausa() {
+        System.out.println("Pulsa INTRO para continuar");
+        scanner.nextLine();
     }
 
 
